@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Books Store</title>
+    <link rel="icon" href="tt.png" sizes="200x200">
+    <style>
+/* Set the font family, size, and style for the entire document */
+  
+body {
+            font-family: 'Times New Roman', Times, serif; /* Set font to Times New Roman */
+            font-size: 16px; /* Set font size to 12 */
+            background-image: url(book2.jpg);
+            text-align: center;
+        }
+/* Styles for the navigation bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            line-height: 89px;
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 30px;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            display: inline-block;
+            transition: 0.8s all;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 30px;
+        }
+
+         /* Styles for the info sections */
+        .info-section {
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: ghostwhite;
+            color: black;
+            display: none;
+        }
+        .info-section.active {
+            display: block;
+        }
+
+        /* Styles for headings */
+        h2, h3 {
+            color:saddlebrown;
+            font-size: 18px; /* Set heading font size to 14 */
+            font-weight: bold; /* Make heading bold */
+            text-decoration: underline; /* Underline the headings */
+            text-transform: uppercase; /* Transform text to uppercase */
+        }
+
+       
+
+        /* Modal styles make a login in button  */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+ /* to making login in rectangular shape  */
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+ /* close window x  */
+
+        .close {
+            color: blue;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+     
+ /* user input  */
+
+        .modal input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 95%;
+        }
+ /* model button and color  */
+
+        .modal button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Styles for links */
+        .link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+        }
+     
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#home" onclick="showSection('home-info')">Home</a></li>
+        <li><a href="#about" onclick="showSection('about-info')">About Us</a></li>
+        <li><a href="#services" onclick="showSection('services-info')">Books</a></li>
+        <li><a href="#contact" onclick="showSection('contact-info')">Contact Us</a></li>
+        <li><a href="#news" onclick="showSection('news-info')">News and Events</a></li>
+    </ul>
+</nav>
+
+
+<!-- Home Info Section Duha-->
+<div class="info-section active" id="home-info">
+<p><b>We offer you a variety of electronic books in the field of technology. We provide new books at special prices.</b></p>
+ <div>
+  <h2>Our Mission</h2>
+  <p>Tech-Books Store, our mission is to empower our community by providing access to a diverse selection of cutting-edge technology     and insightful literature. We strive to be a trusted resource for tech enthusiasts, professionals, and casual users alike, offering a  curated range of the latest gadgets, software, and educational materials. Our commitment extends beyond retail; we aim to foster a culture of innovation and lifelong learning by hosting workshops, seminars, and events that inspire creativity and technological exploration. We believe that technology and knowledge should be accessible to everyone, and we are dedicated to enhancing our customers’ lives through exceptional products, personalized service, and ongoing support.</p>
+  </div>
+  <div>
+<br><hr>
+<h2>Our Vision</h2>
+<p>Our vision is to be the leading destination for technology and books, where curiosity meets knowledge, and innovation is celebrated. We envision a future where our store serves as a vibrant hub for learning and collaboration, bridging the gap between technology and literature. By continuously adapting to the evolving landscape of technology and education, we aim to inspire individuals to harness the power of technology to improve their lives and achieve their goals. We aspire to create a welcoming environment that nurtures community engagement, encourages exploration, and cultivates a passion for learning. Through our unwavering dedication to excellence and our commitment to sustainable practices, we aim to contribute positively to our community and the world at large, shaping a future where technology and knowledge empower individuals to thrive.</p>
+</div><br><hr><button class="login-button" onclick="document.getElementById('login-modal').style.display='block'">Login</button>
+</div>
+
+
+<!-- Login Modal -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('login-modal')">&times;</span>
+        <h2>Login to Your Account</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="submitLogin()">Login</button>  
+        <a class="link")">Forgot Password?</a>
+        <a class="link")">Create an Account</a>  
+    </div>
+</div>
+
+<!-- About Us Section altqwa-->
+<div class="info-section" id="about-info">
+  <h2>About Us</h2>
+  <p>At our Tech-Books Store, we are passionate about connecting readers with the literature that inspires, educates, and entertains. Our carefully curated selection features a wide range of genres, from timeless classics to contemporary bestsellers, ensuring there’s something for everyone. We believe in fostering a community of book lovers, and we strive to create an inviting atmosphere where visitors can explore, discover, and engage with the world of books. Our knowledgeable staff is always on hand to provide personalized recommendations and support, making your experience enjoyable and enriching. Whether you’re a seasoned bibliophile or just beginning your reading journey, we are dedicated to helping you find your next great read.</p><br><hr>
+
+<h2>Our goals</h2>
+<li>Provide a Diverse Selection: Offer a wide array of genres and formats to cater to all reading preferences and interests.</li><br><li>Promote Literacy and Learning: Foster a love for reading by hosting events, workshops, and book clubs that encourage community engagement and lifelong learning.</li><br><li>Enhance Customer Experience: Deliver exceptional customer service through personalized recommendations and a welcoming store environment.</li><br><li>Support Local Authors: Highlight and promote works from local and independent authors to strengthen our community's literary landscape.</li>
+</div>
+
+<!-- Books Section aisha-->
+<div class="info-section" id="services-info">
+    <h2>Our Books</h2><br>
+
+    <!-- Service for Book 1 -->
+    <div class="service">
+        <img src="comp.png" alt="Book 1" class="book-img">
+        <p>CompTIA Security+ SY0-701 Certification Guide</p>
+        <p>Price: $27.00</p>
+        <button class="add-to-cart" onclick="document.getElementById('modal1').style.display='block'">Checkout</button>
+    </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Enter Your Information</h2>
+            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Your Number">
+            <input type="text" placeholder="Your Country">
+            <input type="text" placeholder="Your Address">
+            <input type="text" placeholder="Payment Method">
+            <button onclick="submitOrder('modal1')">Submit</button>
+        </div>
+    </div><br><br><hr>
+
+    <!-- Service for Book 2 -->
+    <div class="service">
+        <img src="dume.png" alt="Book 2" class="book-img">
+        <p>Cybersecurity All-in-One for Dummies</p>
+        <p>Price: $15.00</p>
+        <button class="add-to-cart" onclick="document.getElementById('modal2').style.display='block'">Checkout</button>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Enter Your Information</h2>
+            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Your Number">
+            <input type="text" placeholder="Your Country">
+            <input type="text" placeholder="Your Address">
+            <input type="text" placeholder="Payment Method">
+            <button onclick="submitOrder('modal2')">Submit</button>
+        </div>
+    </div><br><br><hr>
+
+    <!-- Service for Book 3 -->
+    <div class="service">
+        <img src="kai.png" alt="Book 3" class="book-img">
+        <p>Kali Linux Hacking</p>
+        <p>Price: $20.00</p>
+        <button class="add-to-cart" onclick="document.getElementById('modal3').style.display='block'">Checkout</button>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Enter Your Information</h2>
+            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Your Number">
+            <input type="text" placeholder="Your Country">
+            <input type="text" placeholder="Your Address">
+            <input type="text" placeholder="Payment Method">
+            <button onclick="submitOrder('modal3')">Submit</button>
+        </div>
+    </div><br><br><hr>
+    <!-- Service for Book 4 -->
+    <div class="service">
+        <img src="python.png" alt="Book 4" class="book-img">
+        <p>Mastering Python Networking - Fourth Edition</p>
+        <p>Price: $25.00</p>
+        <button class="add-to-cart" onclick="document.getElementById('modal4').style.display='block'">Checkout</button>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Enter Your Information</h2>
+            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Your Number">
+            <input type="text" placeholder="Your Country">
+            <input type="text" placeholder="Your Address">
+            <input type="text" placeholder="Payment Method">
+            <button onclick="submitOrder('modal4')">Submit</button>
+        </div>
+    </div><br><br><hr>
+
+    <!-- Service for Book 5 -->
+    <div class="service">
+        <img src="net.png" alt="Book 5" class="book-img">
+        <p>Network Basics for Hackers</p>
+        <p>Price: $19.00</p>
+        <button class="add-to-cart" onclick="document.getElementById('modal5').style.display='block'">Checkout</button>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Enter Your Information</h2>
+            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Your number">
+            <input type="text" placeholder="Your Country">
+            <input type="text" placeholder="Your Address">
+            <input type="text" placeholder="Payment Method">
+            <button onclick="submitOrder('modal5')">Submit</button>
+        </div>
+    </div><br><br><hr>
+</div>
+<style>
+    .book-img {
+        width: 100px;
+        height: auto;
+    }
+
+    .add-to-cart {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+</style>
+<!-- Contact Us Section norah-->
+<div class="info-section" id="contact-info">
+    <h3>Feedback</h3>
+    <form id="feedback-form" onsubmit="submitFeedback(event)" style="display: flex; flex-direction: column; align-items: center;">
+        <input type="text" placeholder="Your Name" required style="margin-bottom: 10px; width: 80%;">
+        <input type="email" placeholder="Your Email" required style="margin-bottom: 10px; width: 80%;">
+        <textarea placeholder="Your Feedback" required rows="4" style="margin-bottom: 10px; width: 80%;"></textarea>
+        <button type="submit" style="padding: 10px 20px; background-color: blue; color: white; border: none; border-radius: 5px;">Submit Feedback</button>
+    </form>
+    <hr>
+    <b>Feel free to reach out for inquiries and upcoming books</b>
+    <!-- Social Media Links -->
+    <a href="https://www.instagram.com/your_instagram_username" target="_blank">
+        <img src="instagram.png" alt="Instagram Logo" style="width: 50px; height: auto; margin-top: 10px;">
+    </a>
+    <a href="https://www.instagram.com/your_instagram_username" target="_blank">
+        <img src="youtube.png" alt="Youtube Logo" style="width: 50px; height: auto; margin-top: 10px;">
+    </a>
+    <a href="https://www.instagram.com/your_instagram_username" target="_blank">
+        <img src="google.png" alt="Google Logo" style="width: 50px; height: auto; margin-top: 10px;">
+    </a>
+</div>
+
+<!-- News Section fatima-->
+<div class="info-section" id="news-info">
+    <div class="news-item">
+        <img src="mart.jpg" alt="Muscat Event" class="news-img">
+        <p>We will be in Muscat Book Event 2025💥</p>
+    </div><hr>
+
+    <div class="news-item">
+        <img src="googlelib.png" width=500 alt="Google Event" class="news-img">
+        <p>Search about us in Google Library, we downloaded our book 🔥</p>
+    </div><hr>
+     <div class="news-item">
+        <img src="hackthon.jpg" alt="Hackathon Event" class="news-img">
+        <p>We will participate in Book Hackathon. Stay tuned😍!</p>
+     </div>
+</div>
+
+<script>
+// Function to show the selected section and hide others
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.info-section');
+    sections.forEach(section => {
+        section.classList.remove('active'); // Remove active class from all sections
+    });
+    const activeSection = document.getElementById(sectionId);
+    if (activeSection) {
+        activeSection.classList.add('active'); // Add active class to the selected section
+    }
+}
+// Function to close a modal
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none'; // Hide the modal
+}
+</script>
+</body>
+</html>
